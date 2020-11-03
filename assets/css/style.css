@@ -56,33 +56,57 @@
     width: 500px;
 }
 .ex-6-img:hover{filter: grayscale(100%);}
+.ex-7-img{transition-duration: 3s;}
 .ex-7-img:hover {
-    animation-name: example;
-    animation-duration: 1s;
-    /* transition: all 2s ease-out; */
+    filter: sepia(60%);
+    transition: all 2s ease-in-out;
 }
-@keyframes example {
-  0%   {filter: sepia(0%);}
-  25%  {filter: sepia(15%);}
-  50%  {filter: sepia(30%);}
-  100% {filter: sepia(60%);}
-  100% {filter: sepia(60%);}
-  50%  {filter: sepia(30%);}
-  25%  {filter: sepia(15%);}
-  0%   {filter: sepia(0%);}
+
+.ex-8-img{transition: 2s;}
+.ex-8-img:hover{
+    border-radius: 20px;
+    filter: grayscale(60%) sepia(50%);
 }
-.ex-7-img:hover::after{filter: grayscale(100%);}
 
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
+    transition: 2s;
 }
+
+.ex-9-img:hover{
+    transform: scale(1.5);
+    border-radius: 20px;
+    filter: grayscale(60%) sepia(50%);
+}
+
 .ex-10-icon {
     font-size: 60px;
+    animation: spin 1s linear infinite;
 }
+
+@keyframes spin { 
+    from {transform: rotate(360deg);} 
+    to {transform: rotate(0deg);}
+}
+
+
 .ex-11-icon {
     font-size: 60px;
 }
+
+.ex-11-icon:hover{
+    animation: semi_spin;
+    animation-duration: 2s;
+}
+
+@keyframes semi_spin {
+    0%{transform: rotate(0deg);}
+    80%{transform: rotate(270deg);}
+    100%{transform: rotate(0deg);}
+}
+
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -104,6 +128,30 @@
     width: 60px;
     height: 20px;
 }
+
+.ex-12-button:hover .ex-12-top-white {
+    animation-name: white_move_top_12;
+    animation-duration: 2s;
+}
+
+.ex-12-button:hover .ex-12-bottom-white{
+    animation-name: white_move_bottom_12;
+    animation-duration: 2s;
+}
+
+@keyframes white_move_top_12 {
+    0%, 100% {left: 10%;}
+    50% {left: 69%;}
+    55% {left: 68%;}
+
+}
+@keyframes white_move_bottom_12 {
+    0%, 100% {right: 20%;}
+    50% {right: 69%;}
+    55% {right: 68%;}
+
+}
+
 .ex-12-bottom-white, .ex-13-bottom-white {
     position: absolute;
     bottom: -10px;
@@ -113,3 +161,25 @@
     height: 20px;
 }
 
+.ex-13-button:hover .ex-13-top-white {
+    animation-name: white_move_top_13;
+    animation-duration: 2s;
+}
+
+.ex-13-button:hover .ex-13-bottom-white{
+    animation-name: white_move_bottom_13;
+    animation-duration: 2s;
+}
+
+@keyframes white_move_top_13 {
+    0%, 100% {left: 10%;}
+    50% {left: 69%;}
+    55% {left: 68%;}
+
+}
+@keyframes white_move_bottom_13 {
+    0%, 100% {right: 20%;}
+    50% {right: 69%;}
+    55% {right: 68%;}
+
+}
